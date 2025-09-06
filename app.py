@@ -144,7 +144,7 @@ class PhishingDetector:
                 self.feature_selector = joblib.load('better_feature_selector.pkl')
                 df = pd.read_csv('better_phishing_features.csv')
                 self.feature_names = [col for col in df.columns if col != 'label']
-                print("Loaded better model successfully!")
+                st.success("Loaded better model successfully!")
             except FileNotFoundError:
                 # Fallback to original model
                 self.model = joblib.load('best_phishing_model.pkl')
@@ -152,7 +152,7 @@ class PhishingDetector:
                 self.feature_selector = joblib.load('feature_selector.pkl')
                 df = pd.read_csv('phishing_features.csv')
                 self.feature_names = [col for col in df.columns if col != 'label']
-                print("Loaded original model (better model not found)")
+                st.info("Loaded original model (better model not found)")
             
             return True
         except Exception as e:
