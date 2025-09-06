@@ -1,7 +1,0 @@
-streamlit
-pandas
-numpy
-joblib
-requests
-beautifulsoup4
-plotly
